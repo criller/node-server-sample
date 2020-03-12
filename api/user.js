@@ -5,6 +5,7 @@ module.exports = router;
 
 // get请求接口
 router.all("/getUserInfo",(req,res)=>{
+    var string = url.parse(req.url, true);
     var response = { status: 2, data: {'username':'admin','password':'a123456'} };
     res.send(JSON.stringify(response));
     console.log("URL:" + req.url + "  " + string.pathname);
